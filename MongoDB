@@ -1,0 +1,60 @@
+DataBase name: gameDB
+
+Collections:
+
+BattleLogs
+
+Players
+
+Rankings
+
+Reports
+
+Users
+
+
+Sample data in Battlelogs
+
+{
+  _id: ObjectId('6684e5cc2e5758e7a7ade1af'),
+  playerId: ObjectId('6683d2d32e5758e7a7ade188'),
+  opponentId: ObjectId('6683f9447f27316d93e54442'),
+  result: 'win',
+  date: 2024-07-03T07:00:00.000Z
+}
+
+Sample data in Players
+
+{
+  _id: ObjectId('6684d318b6d878408ee1af8a'),
+  name: 'Fabian',
+  joinDate: 2024-07-03T04:27:04.686Z,
+  level: 12
+}
+
+Sample data in Rankings
+
+{
+  _id: ObjectId('6684d4444700b8f52025de0f'),
+  playerId: ObjectId('6684d318b6d878408ee1af8a'),
+  ranking: 4
+}
+
+Sample data in Reports
+
+{
+  _id: ObjectId('6683fe789120e8b5518e6550'),
+  moderator_name: 'Yashwanth',
+  player_name: 'Chethan',
+  reason: 'Found to be using cheats',
+  date: 2024-07-02T13:19:52.506Z
+}
+
+Sample data in Users
+
+{
+  _id: ObjectId('6684d318b6d878408ee1af89'),
+  username: 'Fabian',
+  password: 'player6',
+  role: 'PLAYER'
+}
