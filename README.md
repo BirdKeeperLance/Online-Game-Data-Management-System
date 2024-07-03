@@ -3,13 +3,13 @@ There's a lot of data to be found in games, from basic information like player n
 
 **Technologies Used:**
 
-Flask: Python web framework for building the backend application.
+**Flask**: Python web framework for building the backend application.
 
-MongoDB: NoSQL database used for storing game-related data such as users, player profiles, rankings, battle logs, and reports.
+**MongoDB**: NoSQL database used for storing game-related data such as users, player profiles, rankings, battle logs, and reports.
 
-HTML/CSS: Used for frontend templates and styling.
+**HTML/CSS**: Used for frontend templates and styling.
 
-Python Libraries: Including Flask, pymongo for MongoDB interaction, and bson for ObjectId handling.
+**Python Libraries**: Including Flask, pymongo for MongoDB interaction, and bson for ObjectId handling.
 
 **Features:**
 
@@ -79,5 +79,6 @@ Basic error handling for invalid credentials and unauthorized access to certain 
 
 **Project Structure:**
 
-app.py: Main application file containing route definitions, MongoDB connections, and route handlers for various functionalities.
-Templates: HTML files for rendering different dashboard views and forms.
+**app.py**: Main application file containing route definitions, MongoDB connections, and route handlers for various functionalities.
+
+**Templates**: HTML files for rendering different dashboard views and forms.
