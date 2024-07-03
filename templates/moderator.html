@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moderator Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"], input[type="password"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right">
+        <a href="/logout">Logout</a>
+    </div>
+    <h1>Welcome, Moderator</h1>
+
+    <h2>Players</h2>
+    <ul>
+        {% for player in players %}
+            <li>{{ player.name }} - Level: {{ player.level }} - Joined: {{ player.joinDate }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Rankings</h2>
+    <ul>
+        {% for rank in rankings %}
+            {% set player = players | selectattr('_id', 'equalto', rank.playerId) | list | first %}
+            {% if player %}
+                <li>{{ player.name }} - Rank: {{ rank.ranking }}</li>
+            {% else %}
+                <li>No player found for rank {{ rank.ranking }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <h2>Battle Logs</h2>
+    <ul>
+        {% for log in battle_logs %}
+            {% set player = players | selectattr('_id', 'equalto', log.playerId) | list | first %}
+            {% set opponent = players | selectattr('_id', 'equalto', log.opponentId) | list | first %}
+            <li>
+                {% if player %}{{ player.name }}{% else %}Unknown{% endif %}
+                vs
+                {% if opponent %}{{ opponent.name }}{% else %}Unknown{% endif %}
+                - Result: {{ log.result }} - Date: {{ log.date }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Report a Player</h2>
+    <form action="/moderator/report_player" method="POST">
+        <label for="player_name">Player Name:</label>
+        <input type="text" name="player_name" required>
+        <br>
+        <label for="reason">Reason:</label>
+        <textarea name="reason" required></textarea>
+        <br>
+        <button type="submit">Report</button>
+    </form>
+</body>
+</html>
