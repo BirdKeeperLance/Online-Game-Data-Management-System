@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, session
 from pymongo import MongoClient
 import datetime
+import os
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = os.urandom(24)
 
 client = MongoClient('mongodb://localhost:27017/')
 db = client.gameDB
