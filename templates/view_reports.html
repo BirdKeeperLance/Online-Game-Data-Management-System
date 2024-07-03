@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Reports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right">
+        <a href="/admin">Go back</a>
+    </div>
+    <h1>Reports</h1>
+
+    <table>
+        <tr>
+            <th>Moderator Name</th>
+            <th>Player Name</th>
+            <th>Reason</th>
+            <th>Date</th>
+        </tr>
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.moderator_name }}</td>
+            <td>{{ report.player_name }}</td>
+            <td>{{ report.reason }}</td>
+            <td>{{ report.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
