@@ -1,7 +1,11 @@
 # Online-Game-Data-Management-System
 There's a lot of data to be found in games, from basic information like player name, date of joining, player level to advanced ever changing data like ranking, battle logs and matchmaking opponents. This project aims to use MongoDB, Flask and basic HTML and CSS to display the information. 
 
+<br>
+
 **Technologies Used:**
+
+<br>
 
 **Flask**: Python web framework for building the backend application.
 
@@ -11,9 +15,11 @@ There's a lot of data to be found in games, from basic information like player n
 
 **Python Libraries**: Including Flask, pymongo for MongoDB interaction, and bson for ObjectId handling.
 
-
+<br>
 
 **Features:**
+
+<br>
 
 **User Authentication:**
 
@@ -23,7 +29,11 @@ Existing users are prevented from signing up again.
 
 Upon successful sign-in, users are redirected to their respective dashboards based on their role (ADMIN, MODERATOR, PLAYER).
 
+<br>
+
 **Role-based Dashboards:**
+
+<br>
 
 **Admin Dashboard:**
 
@@ -47,7 +57,11 @@ Accessible to users with the role 'PLAYER'.
 
 Shows the player's profile information, current ranking, and battle history.
 
+<br>
+
 **Reporting System:**
+
+<br>
 
 **Moderator Reporting:**
 
@@ -55,9 +69,11 @@ Moderators can report players with reasons specified.
 
 Reports are stored in MongoDB and can be viewed by admins for review and action.
 
-
+<br>
 
 **Data Management:**
+
+<br>
 
 **Player Management:**
 
@@ -73,19 +89,19 @@ Admins can delete moderators from the system.
 
 Admins can change a player's ranking, updating the MongoDB collection accordingly.
 
-
+<br>
 
 **Session Management:**
 
 Uses Flask's session management for storing user information securely during their session.
 
-
+<br>
 
 **Error Handling:**
 
 Basic error handling for invalid credentials and unauthorized access to certain routes.
 
-
+<br>
 
 **Project Structure:**
 
