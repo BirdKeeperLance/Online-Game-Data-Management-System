@@ -11,6 +11,8 @@ There's a lot of data to be found in games, from basic information like player n
 
 **Python Libraries**: Including Flask, pymongo for MongoDB interaction, and bson for ObjectId handling.
 
+
+
 **Features:**
 
 **User Authentication:**
@@ -53,6 +55,8 @@ Moderators can report players with reasons specified.
 
 Reports are stored in MongoDB and can be viewed by admins for review and action.
 
+
+
 **Data Management:**
 
 **Player Management:**
@@ -69,13 +73,19 @@ Admins can delete moderators from the system.
 
 Admins can change a player's ranking, updating the MongoDB collection accordingly.
 
+
+
 **Session Management:**
 
 Uses Flask's session management for storing user information securely during their session.
 
+
+
 **Error Handling:**
 
 Basic error handling for invalid credentials and unauthorized access to certain routes.
+
+
 
 **Project Structure:**
 
